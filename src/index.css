@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 209 100% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 209 100% 32%;
+    --primary-light: 213 100% 65%;
+    --secondary: 151 100% 43%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-dark: 151 100% 36%;
+    --secondary-light: 145 100% 60%;
+    --accent: 20 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --muted: 210 33% 96%;
+    --muted-foreground: 0 0% 40%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 209 100% 40%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 209 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 209 100% 60%;
+    --gradient-primary: linear-gradient(135deg, hsl(209 100% 40%) 0%, hsl(209 100% 32%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(209 100% 40%) 0%, hsl(220 100% 35%) 100%);
+    --shadow-primary: 0 8px 32px hsla(209, 100%, 40%, 0.2);
+    --shadow-lg: 0 16px 48px hsla(209, 100%, 40%, 0.15);
+  }
+
+  .dark {
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 209 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 151 100% 43%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 20 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 27% 84%;
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 209 100% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 209 91% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  .btn-hero {
+    @apply inline-flex items-center gap-2 bg-secondary text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg transition-all duration-200;
+  }
+  .btn-hero:hover { @apply scale-105; box-shadow: 0 12px 32px hsla(151, 100%, 43%, 0.35); }
+  .btn-hero:active { @apply scale-100; }
+  .premium-header { background: var(--gradient-hero); }
+  .card-premium { @apply bg-card rounded-2xl border border-border/50; box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.05); }
+  .card-premium:hover { @apply border-primary/20; box-shadow: var(--shadow-primary); }
+  .tool-card-primary { @apply relative overflow-hidden; background: var(--gradient-primary); }
+  .badge-premium { @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-sm font-medium; background: hsla(0, 0%, 100%, 0.15); backdrop-filter: blur(10px); }
+  .form-input-premium { @apply w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground transition-all duration-200; }
+  .form-input-premium:focus { @apply outline-none ring-2 ring-primary/20 border-primary; }
+}
+
+.recibo-document {
+  width: 794px;
+  min-height: 1123px;
+  padding: 48px 64px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.recibo-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 80px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.03);
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+@media print {
+  .recibo-document {
+    box-shadow: none;
+    margin: 0;
+    padding: 40px;
+  }
+  .recibo-watermark { display: none; }
+}
+
+@media (max-width: 1024px) {
+  .recibo-document {
+    width: 100%;
+    min-height: auto;
+    padding: 24px;
+    box-shadow: none;
+  }
+}
