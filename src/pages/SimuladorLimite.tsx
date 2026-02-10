@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { AdPlaceholder } from "@/components/AdPlaceholder";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -77,6 +78,10 @@ const SimuladorLimite = () => {
             <div className="mt-6 flex gap-3">
               <Button variant="outline" onClick={() => { setFaturamentos(Array(12).fill(0)); localStorage.removeItem("faturamentosMEI"); }} className="flex-1">Limpar Tudo</Button>
             </div>
+          </div>
+          {/* Ad placeholder between tools */}
+          <div className="my-6">
+            <AdPlaceholder slot="1234567890" />
           </div>
         </div>
       </main>
