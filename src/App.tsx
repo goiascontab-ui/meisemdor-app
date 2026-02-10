@@ -12,6 +12,7 @@ import ChecklistMensal from "./pages/ChecklistMensal";
 import Privacidade from "./pages/Privacidade";
 import Termos from "./pages/Termos";
 import Contato from "./pages/Contato";
+import { CookieBanner } from "./components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CookieBanner />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />

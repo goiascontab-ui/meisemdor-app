@@ -44,7 +44,7 @@ export function AdSense({
       <ins
         className="adsbygoogle"
         style={{ display: 'block' }}
-        data-ad-client="ca-pub-XXXXXXXXXX" // SUBSTITUIR pelo seu ID
+        data-ad-client="ca-pub-6857835151614008"
         data-ad-slot={slot}
         data-ad-format={format}
         data-full-width-responsive={responsive}
