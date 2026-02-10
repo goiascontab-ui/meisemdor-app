@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://meisemdor.com.br/sitemap.xml
+

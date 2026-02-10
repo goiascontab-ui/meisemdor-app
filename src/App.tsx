@@ -11,6 +11,7 @@ import CalculadoraDAS from "./pages/CalculadoraDAS";
 import ChecklistMensal from "./pages/ChecklistMensal";
 import Privacidade from "./pages/Privacidade";
 import Termos from "./pages/Termos";
+import Contato from "./pages/Contato";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/calculadora-das" element={<CalculadoraDAS />} />
           <Route path="/checklist" element={<ChecklistMensal />} />
           <Route path="/privacidade" element={<Privacidade />} />
+          <Route path="/contato" element={<Contato />} />
           <Route path="/termos" element={<Termos />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
